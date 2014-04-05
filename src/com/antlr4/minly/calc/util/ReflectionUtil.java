@@ -9,6 +9,7 @@ import com.antlr4.minly.calc.core.CalcValue;
 
 /**
  * Magical class for java reflection
+ * 
  * @author minlywang@foxmail.com
  * @since Apr 5, 2014
  * 
