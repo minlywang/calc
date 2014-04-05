@@ -5,6 +5,7 @@ package com.antlr4.minly.calc.core;
  * 
  * @author minlywang@foxmail.com
  * @since Apr 5, 2014
+ * 
  */
 public class CalcObject {
 

@@ -46,8 +46,6 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 			if (ctx.integerLiteral() instanceof CalcParser.IntegerLiteralContext) {
 				value.setValue(visitIntegerLiteral(ctx.integerLiteral(), scope));
 			} else {
-				// value = memory.get();
-				// value = (value == null ? 0 : value);
 				value = scope.child(ctx.ID().getText()).getVariableValue();
 			}
 		} else {
@@ -127,10 +125,11 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 
 	@Override
 	public Object visitJavaStaticMethods(JavaStaticMethodsContext ctx, CalcScope scope) {
-		/*
+		/* 
 		 * Okay, firstly we need to test existence of class and fields or method
 		 * after, we get a value for arguments, finally we invoke a static Java
 		 * Method
+		 * 
 		 */
 
 		@SuppressWarnings("unchecked")
@@ -141,7 +140,7 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 			// making a class object
 			Object currentObject = ReflectionUtil.makeObject(identifier);
 			if (currentObject != null) {
-				// ~ getting a last field object
+				// getting a last field object
 				for (int i = 1; i < qualifiedNames.size(); i++) {
 					if (ReflectionUtil.existsField(currentObject, qualifiedNames.get(i))) {
 						currentObject = ReflectionUtil.getFieldObject(currentObject, qualifiedNames.get(i));
