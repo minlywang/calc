@@ -239,16 +239,9 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 	@Override
 	public Object visitRelationalExprssion(RelationalExprssionContext ctx, CalcScope scope) {
 		setCurrentScope(scope);
-		Integer left = (Integer) ((CalcValue) visitExpression(ctx.expression(0), scope)).getValue(); // get
-																										// value
-																										// of
-																										// left
-		// subexpression
-		Integer right = (Integer) ((CalcValue) visitExpression(ctx.expression(1), scope)).getValue(); // get
-																										// value
-																										// of
-		// right
-		// subexpression
+		Integer left = (Integer) ((CalcValue) visitExpression(ctx.expression(0), scope)).getValue();
+		Integer right = (Integer) ((CalcValue) visitExpression(ctx.expression(1), scope)).getValue();
+		
 		if (ctx.op.getType() == CalcParser.EQ) {
 			return left == right;
 		} else if (ctx.op.getType() == CalcParser.NE) {
@@ -312,7 +305,7 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 		if(str == null){
 			return "";
 		}
-		return StringParser.unescapeString(str,true);
+		return StringParser.buildString(str,true);
 	}
 
 	@Override

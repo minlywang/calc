@@ -17,6 +17,10 @@ package com.github.minlywang.dsl.calc.util;
  * A sequence where '\' occurs before any non-escapable character or sequence
  * has no effect, the sequence output being the same as the input.
  * </p>
+ * 
+ * @author minlywang@foxmail.com
+ * @since Apr 5, 2014
+ * 
  */
 public class StringParser {
 	/** Default constructor. */
@@ -32,15 +36,6 @@ public class StringParser {
 	 * @return the built string
 	 */
 	public static String buildString(CharSequence str, boolean eatsep) {
-		StringBuilder strb = new StringBuilder(str.length());
-		char sep = eatsep ? str.charAt(0) : 0;
-		int end = str.length() - (eatsep ? 1 : 0);
-		int begin = (eatsep ? 1 : 0);
-		read(strb, str, begin, end, sep);
-		return strb.toString();
-	}
-
-	public static String unescapeString(CharSequence str, boolean eatsep) {
 		StringBuilder strb = new StringBuilder(str.length());
 		char sep = eatsep ? str.charAt(0) : 0;
 		int end = str.length() - (eatsep ? 1 : 0);
