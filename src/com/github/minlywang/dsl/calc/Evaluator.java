@@ -1,31 +1,31 @@
-package com.antlr4.minly.calc;
+package com.github.minlywang.dsl.calc;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-import com.antlr4.minly.calc.CalcParser.ArgumentContext;
-import com.antlr4.minly.calc.CalcParser.CompilationUnitContext;
-import com.antlr4.minly.calc.CalcParser.ConcatenationContext;
-import com.antlr4.minly.calc.CalcParser.ExpressionContext;
-import com.antlr4.minly.calc.CalcParser.ExpressionListContext;
-import com.antlr4.minly.calc.CalcParser.IfExpressionContext;
-import com.antlr4.minly.calc.CalcParser.ImportDeclarationContext;
-import com.antlr4.minly.calc.CalcParser.IntegerLiteralContext;
-import com.antlr4.minly.calc.CalcParser.JavaStaticMethodsContext;
-import com.antlr4.minly.calc.CalcParser.QualifiedNameContext;
-import com.antlr4.minly.calc.CalcParser.RelationalExprssionContext;
-import com.antlr4.minly.calc.CalcParser.RequireContext;
-import com.antlr4.minly.calc.CalcParser.StatementContext;
-import com.antlr4.minly.calc.CalcParser.StringLiteralContext;
-import com.antlr4.minly.calc.CalcParser.VariableAssignContext;
-import com.antlr4.minly.calc.CalcParser.VariableDeclarationContext;
-import com.antlr4.minly.calc.CalcParser.WhileExpressionContext;
-import com.antlr4.minly.calc.core.CalcScope;
-import com.antlr4.minly.calc.core.CalcValue;
-import com.antlr4.minly.calc.core.CalcVariable;
-import com.antlr4.minly.calc.util.ReflectionUtil;
+import com.github.minlywang.dsl.calc.CalcParser.ArgumentContext;
+import com.github.minlywang.dsl.calc.CalcParser.CompilationUnitContext;
+import com.github.minlywang.dsl.calc.CalcParser.ConcatenationContext;
+import com.github.minlywang.dsl.calc.CalcParser.ExpressionContext;
+import com.github.minlywang.dsl.calc.CalcParser.ExpressionListContext;
+import com.github.minlywang.dsl.calc.CalcParser.IfExpressionContext;
+import com.github.minlywang.dsl.calc.CalcParser.ImportDeclarationContext;
+import com.github.minlywang.dsl.calc.CalcParser.IntegerLiteralContext;
+import com.github.minlywang.dsl.calc.CalcParser.JavaStaticMethodsContext;
+import com.github.minlywang.dsl.calc.CalcParser.QualifiedNameContext;
+import com.github.minlywang.dsl.calc.CalcParser.RelationalExprssionContext;
+import com.github.minlywang.dsl.calc.CalcParser.RequireContext;
+import com.github.minlywang.dsl.calc.CalcParser.StatementContext;
+import com.github.minlywang.dsl.calc.CalcParser.StringLiteralContext;
+import com.github.minlywang.dsl.calc.CalcParser.VariableAssignContext;
+import com.github.minlywang.dsl.calc.CalcParser.VariableDeclarationContext;
+import com.github.minlywang.dsl.calc.CalcParser.WhileExpressionContext;
+import com.github.minlywang.dsl.calc.core.CalcScope;
+import com.github.minlywang.dsl.calc.core.CalcValue;
+import com.github.minlywang.dsl.calc.core.CalcVariable;
+import com.github.minlywang.dsl.calc.util.ReflectionUtil;
 
 /**
  * Interpretor

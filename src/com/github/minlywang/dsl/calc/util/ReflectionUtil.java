@@ -1,11 +1,11 @@
-package com.antlr4.minly.calc.util;
+package com.github.minlywang.dsl.calc.util;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.LinkedList;
 
-import com.antlr4.minly.calc.core.CalcValue;
+import com.github.minlywang.dsl.calc.core.CalcValue;
 
 /**
  * Magical class for java reflection

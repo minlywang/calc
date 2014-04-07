@@ -1,10 +1,10 @@
-package com.antlr4.minly.calc;
+package com.github.minlywang.dsl.calc;
 
 // Generated from Calc.g4 by ANTLR 4.2
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
-import com.antlr4.minly.calc.core.CalcScope;
+import com.github.minlywang.dsl.calc.core.CalcScope;
 
 /**
  * This class provides an empty implementation of {@link CalcVisitor}, which can

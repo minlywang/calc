@@ -1,4 +1,4 @@
-package com.antlr4.minly.calc;
+package com.github.minlywang.dsl.calc;
 
 // Generated from Calc.g4 by ANTLR 4.2
 import org.antlr.v4.runtime.atn.*;

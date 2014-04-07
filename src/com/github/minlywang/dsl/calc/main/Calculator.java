@@ -1,4 +1,4 @@
-package com.antlr4.minly.calc.main;
+package com.github.minlywang.dsl.calc.main;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -7,9 +7,9 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import com.antlr4.minly.calc.CalcLexer;
-import com.antlr4.minly.calc.CalcParser;
-import com.antlr4.minly.calc.Evaluator;
+import com.github.minlywang.dsl.calc.CalcLexer;
+import com.github.minlywang.dsl.calc.CalcParser;
+import com.github.minlywang.dsl.calc.Evaluator;
 
 /**
  * Calculator

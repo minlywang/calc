@@ -1,4 +1,4 @@
-package com.antlr4.minly.calc.core;
+package com.github.minlywang.dsl.calc.core;
 
 import java.util.Hashtable;
 
