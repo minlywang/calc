@@ -25,6 +25,7 @@ import com.github.minlywang.dsl.calc.CalcParser.WhileExpressionContext;
 import com.github.minlywang.dsl.calc.core.CalcScope;
 import com.github.minlywang.dsl.calc.core.CalcValue;
 import com.github.minlywang.dsl.calc.core.CalcVariable;
+import com.github.minlywang.dsl.calc.exception.CalcException;
 import com.github.minlywang.dsl.calc.util.ReflectionUtil;
 
 /**
@@ -46,6 +47,10 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 			if (ctx.integerLiteral() instanceof CalcParser.IntegerLiteralContext) {
 				value.setValue(visitIntegerLiteral(ctx.integerLiteral(), scope));
 			} else {
+				CalcVariable variable = scope.child(ctx.ID().getText());
+				if (variable == null) {
+					throw new CalcException("Undefined variable " + ctx.ID().getText() + " !");
+				}
 				value = scope.child(ctx.ID().getText()).getVariableValue();
 			}
 		} else {
@@ -125,11 +130,10 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 
 	@Override
 	public Object visitJavaStaticMethods(JavaStaticMethodsContext ctx, CalcScope scope) {
-		/* 
+		/*
 		 * Okay, firstly we need to test existence of class and fields or method
 		 * after, we get a value for arguments, finally we invoke a static Java
 		 * Method
-		 * 
 		 */
 
 		@SuppressWarnings("unchecked")
