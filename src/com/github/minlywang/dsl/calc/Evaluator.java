@@ -49,7 +49,7 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 			} else {
 				CalcVariable variable = scope.child(ctx.ID().getText());
 				if (variable == null) {
-					throw new CalcException("Undefined variable " + ctx.ID().getText() + " !");
+					throw new CalcException("VARIABLE: " + ctx.ID().getText() + " NOT DECLARED!");
 				}
 				value = scope.child(ctx.ID().getText()).getVariableValue();
 			}
