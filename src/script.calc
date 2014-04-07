@@ -1,7 +1,11 @@
 require java lang.
 
 def var = 1.
-var = 99.
+var = 5.
+
+System:out:println("***************************").
+System:out:println("\t\u4f5c\u8005\uff1a\u738b\u660e\u96f7").
+System:out:println("***************************").
 
 def counter = 0.
 def t = 13.
@@ -18,7 +22,11 @@ while var >= 0 do
 	
 stop
 
-System:out:println("\u4f5c\u8005\uff1a\u738b\u660e\u96f7").
+System:out:println("\t\u4f5c\u8005\uff1a\u738b\u660e\u96f7").
+System:out:println("***************************").
+System:out:println(100).
+System:out:println("***************************").
+System:out:println("Bye bye...").
 
 
 // comment ignored
