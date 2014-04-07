@@ -314,7 +314,7 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 		CalcValue value = new CalcValue();
 		if (ctx.expression() instanceof CalcParser.ExpressionContext) {
 			value.setType(int.class);
-			value.setValue(visitExpression(ctx.expression(), scope));
+			value.setValue(((CalcValue)visitExpression(ctx.expression(), scope)).getValue());
 		} else {
 			value.setType(String.class);
 			value.setValue(visitConcatenation(ctx.concatenation(), scope));
