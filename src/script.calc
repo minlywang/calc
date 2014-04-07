@@ -1,16 +1,17 @@
-require java lang.
+require java lang. // import libraries
 
-def var = 1.
-var = 5.
 
-System:out:println("***************************").
+def var = 1. // define variable
+var = 5.     // assignment
+
+System:out:println("***************************"). // print out
 System:out:println("\t\u4f5c\u8005\uff1a\u738b\u660e\u96f7").
 System:out:println("***************************").
 
 def counter = 0.
 def t = 13.
 
-while var >= 0 do
+while var >= 0 do // while loop
 
 	counter = counter+1.
 	
@@ -20,11 +21,18 @@ while var >= 0 do
 	
 	var = var - 1 .
 	
-stop
+stop // while ends
 
-System:out:println("\t\u4f5c\u8005\uff1a\u738b\u660e\u96f7").
+System:out:println("\t\u4f5c\u8005\uff1a\u738b\u660e\u96f7"). // print unicode string
 System:out:println("***************************").
 System:out:println(100).
+System:out:println("***************************").
+
+if 1 == 1 do // if begins
+
+	System:out:println("I'm in if body now!").
+
+stop // if ends
 System:out:println("***************************").
 System:out:println("Bye bye...").
 
