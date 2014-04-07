@@ -119,19 +119,6 @@ public class CalcBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements C
 	 * </p>
 	 */
 	@Override
-	public T visitStringLiteral(@NotNull CalcParser.StringLiteralContext ctx, CalcScope scope) {
-		return visitChildren(ctx);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * <p>
-	 * The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.
-	 * </p>
-	 */
-	@Override
 	public T visitIntegerLiteral(@NotNull CalcParser.IntegerLiteralContext ctx, CalcScope scope) {
 		return visitChildren(ctx);
 	}

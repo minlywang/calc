@@ -82,15 +82,6 @@ public interface CalcVisitor<T> extends ParseTreeVisitor<T> {
 	T visitJavaStaticMethods(@NotNull CalcParser.JavaStaticMethodsContext ctx, CalcScope scope);
 
 	/**
-	 * Visit a parse tree produced by {@link CalcParser#stringLiteral}.
-	 * 
-	 * @param ctx the parse tree
-	 * @param scope scope
-	 * @return the visitor result
-	 */
-	T visitStringLiteral(@NotNull CalcParser.StringLiteralContext ctx, CalcScope scope);
-
-	/**
 	 * Visit a parse tree produced by {@link CalcParser#integerLiteral}.
 	 * 
 	 * @param ctx the parse tree

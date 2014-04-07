@@ -18,7 +18,6 @@ import com.github.minlywang.dsl.calc.CalcParser.QualifiedNameContext;
 import com.github.minlywang.dsl.calc.CalcParser.RelationalExprssionContext;
 import com.github.minlywang.dsl.calc.CalcParser.RequireContext;
 import com.github.minlywang.dsl.calc.CalcParser.StatementContext;
-import com.github.minlywang.dsl.calc.CalcParser.StringLiteralContext;
 import com.github.minlywang.dsl.calc.CalcParser.VariableAssignContext;
 import com.github.minlywang.dsl.calc.CalcParser.VariableDeclarationContext;
 import com.github.minlywang.dsl.calc.CalcParser.WhileExpressionContext;
@@ -27,6 +26,7 @@ import com.github.minlywang.dsl.calc.core.CalcValue;
 import com.github.minlywang.dsl.calc.core.CalcVariable;
 import com.github.minlywang.dsl.calc.exception.CalcException;
 import com.github.minlywang.dsl.calc.util.ReflectionUtil;
+import com.github.minlywang.dsl.calc.util.StringParser;
 
 /**
  * Interpretor
@@ -295,27 +295,24 @@ public class Evaluator extends CalcBaseVisitor<Object> {
 	}
 
 	@Override
-	public Object visitStringLiteral(StringLiteralContext ctx, CalcScope scope) {
-		if (ctx == null) {
-			return "";
-		} else {
-			String value = ctx.getText();
-			return value.substring(1, value.length() - 1);
-		}
-	}
-
-	@Override
 	public Object visitConcatenation(ConcatenationContext ctx, CalcScope scope) {
 		setCurrentScope(scope);
 		String concatenation = null;
-		if (ctx.stringLiteral() instanceof CalcParser.StringLiteralContext) {
-			concatenation = (String) visitStringLiteral(ctx.stringLiteral(), scope);
+		if (ctx.getChildCount() == 1) { // String literal
+			concatenation = visitStringLiteral(ctx.getText());
 		} else if (ctx.getChild(0).getText().equals(ctx.concatenation().getText())) {
 			concatenation = (String) visitConcatenation(ctx.concatenation(), scope) + String.valueOf(((CalcValue) visitExpression(ctx.expression(), scope)).getValue());
 		} else {
 			concatenation = String.valueOf(((CalcValue) visitExpression(ctx.expression(), scope)).getValue()) + (String) visitConcatenation(ctx.concatenation(), scope);
 		}
 		return concatenation;
+	}
+	
+	private String visitStringLiteral(String str){
+		if(str == null){
+			return "";
+		}
+		return StringParser.unescapeString(str,true);
 	}
 
 	@Override
