@@ -4,12 +4,25 @@ def var = 1.
 var = 99.
 
 def counter = 0.
+def t = 13.
 
 while var >= 0 do
+
 	counter = counter+1.
-	def t = 13.
+	
 	System:out:println(counter + "..\t\"value\" => " + (var + t * 9) ).
+	
+	System:out:println("***************************").
+	
 	var = var - 1 .
 	
 stop
 
+
+// comment ignored
+
+/**
+*
+* comment ignored
+*
+*/
