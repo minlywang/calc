@@ -33,6 +33,9 @@ public class Calculator {
 		InputStream is = System.in;
 		if (inputFile != null)
 			is = new FileInputStream(inputFile);
+		else{
+			printStatement();
+		}
 		ANTLRInputStream input = new ANTLRInputStream(is);
 		CalcLexer lexer = new CalcLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -41,5 +44,22 @@ public class Calculator {
 
 		Evaluator eval = new Evaluator();
 		eval.visit(tree);
+	}
+	
+	private static void printStatement(){
+		System.out.println();
+		System.out.println("/**");
+		System.out.println(" * ");
+		System.out.println(" * Copyright (c) 2014 Jake Wang");
+		System.out.println(" * https://github.com/minlywang/calc");
+		System.out.println(" * ");
+		System.out.println(" * Licensed under MIT");
+		System.out.println(" * http://www.opensource.org/licenses/mit-license.php");
+		System.out.println(" * "); 
+		System.out.println(" * This is a toy language.");
+		System.out.println(" * ");
+		System.out.println(" * ");
+		System.out.println(" */");
+		System.out.println();
 	}
 }
