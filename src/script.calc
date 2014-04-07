@@ -18,6 +18,8 @@ while var >= 0 do
 	
 stop
 
+System:out:println("\u4f5c\u8005\uff1a\u738b\u660e\u96f7").
+
 
 // comment ignored
 
