@@ -13,6 +13,10 @@ import com.antlr4.minly.calc.core.CalcScope;
  * 
  * @param <T> The return type of the visit operation. Use {@link Void} for
  *            operations with no return type.
+ * 
+ * @author minlywang@foxmail.com
+ * @since Apr 5, 2014
+ * 
  */
 public class CalcBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements CalcVisitor<T> {
 	/**

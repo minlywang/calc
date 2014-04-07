@@ -10,6 +10,13 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
+/**
+ * Extended CalcParser from the generated
+ * 
+ * @author minlywang@foxmail.com
+ * @since Apr 7, 2014
+ * 
+ */
 @SuppressWarnings({ "all", "warnings", "unchecked", "unused", "cast" })
 public class CalcParser extends Parser {
 	protected static final DFA[] _decisionToDFA;
