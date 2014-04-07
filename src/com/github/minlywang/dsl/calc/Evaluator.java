@@ -29,7 +29,7 @@ import com.github.minlywang.dsl.calc.util.ReflectionUtil;
 import com.github.minlywang.dsl.calc.util.StringParser;
 
 /**
- * Interpretor
+ * Interpreter
  * 
  * @author minlywang@foxmail.com
  * @since Apr 5, 2014
